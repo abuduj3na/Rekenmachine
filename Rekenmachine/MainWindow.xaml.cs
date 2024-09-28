@@ -25,11 +25,11 @@ namespace Rekenmachine
         double number1;
         double number2;
         double result;
-        
+        bool result1;
+        bool result2;
         private void addButton_Click(object sender, RoutedEventArgs e)
         {
-            bool result1;
-            bool result2;
+            
             result1 = double.TryParse(number1Textbox.Text, out number1);
             result2 = double.TryParse(number2Textbox.Text, out number2);
             if (result1 && result2)
@@ -47,29 +47,53 @@ namespace Rekenmachine
 
         private void minusButton_Click(object sender, RoutedEventArgs e)
         {
-            number1 = double.Parse(number1Textbox.Text);
-            number2 = double.Parse(number2Textbox.Text);
 
-            result = number1 - number2;
-            resultTextbox.Text = $"{result}";
+            result1 = double.TryParse(number1Textbox.Text, out number1);
+            result2 = double.TryParse(number2Textbox.Text, out number2);
+            if (result1 && result2)
+            {
+                result = number1 - number2;
+                resultTextbox.Text = $"{result}";
+
+            }
+            else
+            {
+                resultTextbox.Text = "Give a Number!";
+            }
         }
 
         private void multiplyButton_Click(object sender, RoutedEventArgs e)
         {
-            number1 = double.Parse(number1Textbox.Text);
-            number2 = double.Parse(number2Textbox.Text);
 
-            result = number1 * number2;
-            resultTextbox.Text = $"{result}";
+            result1 = double.TryParse(number1Textbox.Text, out number1);
+            result2 = double.TryParse(number2Textbox.Text, out number2);
+            if (result1 && result2)
+            {
+                result = number1 * number2;
+                resultTextbox.Text = $"{result}";
+
+            }
+            else
+            {
+                resultTextbox.Text = "Give a Number!";
+            }
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            number1 = double.Parse(number1Textbox.Text);
-            number2 = double.Parse(number2Textbox.Text);
 
-            result = number1 / number2;
-            resultTextbox.Text = $"{result}";
+            result1 = double.TryParse(number1Textbox.Text, out number1);
+            result2 = double.TryParse(number2Textbox.Text, out number2);
+            if (result1 && result2)
+            {
+                result = number1 / number2;
+                resultTextbox.Text = $"{result}";
+
+            }
+            else
+            {
+                resultTextbox.Text = "Give a Number!";
+            }
         }
 
         private void clearButton_Click(object sender, RoutedEventArgs e)
